@@ -1,0 +1,12 @@
+syntax = "proto3";
+package chat;
+import "google/protobuf/wrappers.proto";
+
+message Message{
+    string body = 1;
+    google.protobuf.Int32Value count = 2;
+}
+
+service ChatService {
+    rpc SayHello(Message) returns (Message) {}
+}
